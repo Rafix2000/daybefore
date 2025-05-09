@@ -70,8 +70,19 @@
             <h1 class="text-brand-primary font-subheading text-3xl font-bold mb-3">Toilet Girl</h1>
             <p class="text-brand-accent">Ceci est une description courte mais accrocheuse de pourquoi ce produit est incroyable.</p>
             <p class="text-white text-2xl font-semibold mb-8">20 €</p> 
+            <div class="my-6">
+                <p class="text-sm font-medium text-gray-300 mb-2">Choisir la taille :</p>
+                <div id="size-selector" class="flex flex-wrap gap-2">
+                    <button data-size="S" class="size-button px-4 py-2 border border-gray-600 rounded text-gray-300 hover:border-brand-accent hover:text-brand-accent focus:outline-none focus:border-brand-accent">S</button>
+                    <button data-size="M" class="size-button px-4 py-2 border border-gray-600 rounded text-gray-300 hover:border-brand-accent hover:text-brand-accent focus:outline-none focus:border-brand-accent">M</button>
+                    <button data-size="L" class="size-button px-4 py-2 border border-gray-600 rounded text-gray-300 hover:border-brand-accent hover:text-brand-accent focus:outline-none focus:border-brand-accent">L</button>
+                    <button data-size="XL" class="size-button px-4 py-2 border border-gray-600 rounded text-gray-300 hover:border-brand-accent hover:text-brand-accent focus:outline-none focus:border-brand-accent">XL</button>
+                    <!-- Tu pourras ajouter d'autres tailles si besoin -->
+                </div>
+                <input type="hidden" id="selected-size" name="selected_size"> <!-- Champ caché pour stocker la taille sélectionnée -->
+            </div>
             <button id="addToCartBtn" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out">
-                Ajouter au Panier <!-- Bouton -->
+                Précommander Maintenant <!-- Bouton -->
             </button>
     </div>
     </section>

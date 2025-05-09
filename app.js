@@ -1,6 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const mainProductImage = document.getElementById('main-product-image');
+const thumbnailButtons = document.querySelectorAll('.thumbnail-button');
+
+if (mainProductImage && thumbnailButtons.length > 0) {
+    thumbnailButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const newImageSrc = button.dataset.imageSrc;
+            if (newImageSrc) {
+                mainProductImage.src = newImageSrc;
+                const newImageAlt = button.querySelector('img')?.alt || "Image du produit (mockup)";
+                mainProductImage.alt = newImageAlt;
+            }
+            thumbnailButtons.forEach(btn => {
+                btn.classList.remove('border-brand-accent');
+                btn.classList.add('border-transparent');
+            });
+            button.classList.add('border-brand-accent');
+            button.classList.remove('border-transparent');
+        });
+    });
+}
     const loader = document.getElementById('loader');
-    const stars = document.querySelectorAll('#stars-container .star');
+    const stars = document.querySelectorAll('#loader svg .logo-animation-loader');
     // Cible les éléments principaux du contenu
     const mainHeader = document.getElementById('main-header');
     const mainPageContent = document.getElementById('main-page-content');
@@ -8,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let starIndex = 0;
     const totalStars = stars.length;
-    const starAppearInterval = 300; // Temps en ms entre l'apparition de chaque étoile
+    const starAppearInterval = 150; // Temps en ms entre l'apparition de chaque étoile
     const loaderDisappearDelay = starAppearInterval * totalStars + 500; // Temps avant que le loader disparaisse
     const contentAppearDelay = loaderDisappearDelay + 100; // Temps avant que le contenu apparaisse
 
@@ -22,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Commence l'animation des étoiles
-    setTimeout(showNextStar, 500); // Petit délai initial avant la première étoile
+    setTimeout(showNextStar, 250); // Petit délai initial avant la première étoile
 
     // Fait disparaître le loader
     setTimeout(() => {

@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('loader');
     const stars = document.querySelectorAll('#loader svg .logo-animation-loader'); // ATTENTION A CETTE CLASSE
     const mainHeader = document.getElementById('main-header');
+    const logoLinkHeader = document.getElementById('logo-link-header');
+    if (logoLinkHeader) {
+        logoLinkHeader.addEventListener('click', (event) => {
+            event.preventDefault(); // Empêche le comportement par défaut du lien (qui est d'aller à "#")
+            window.location.reload(); // Actualise la page
+        });
+    }
     const mainPageContent = document.getElementById('main-page-content');
     const mainFooter = document.getElementById('main-footer');
 

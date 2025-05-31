@@ -22,9 +22,19 @@
     animation: wobble-sticker 4s ease-in-out infinite;
     animation-delay: 1s;
 }
+.shopify-button-hidden-initially {
+    visibility: hidden; /* Ou display: none; mais visibility est parfois mieux pour les scripts qui calculent la taille */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Optionnel, pour un fondu enchaîné */
+}
+
+.shopify-button-visible {
+    visibility: visible;
+    opacity: 1;
+}
     </style>
 </head>
-<body class="bg-brand-alternativedark">
+<body class="bg-brand-alternativedark overflow-x-hidden">
     <div id="loader" class="fixed inset-0 bg-brand-alternativedark flex flex-col justify-center items-center z-50 transition-opacity duration-1000 ease-in-out">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1670.03 250.33" class="w-auto h-12 md:h-16 text-brand-accent">
             <path id="_star-1_" class="logo-animation-loader opacity-0 transition-opacity duration-300 ease-in-out" d="m131,0h1.37l30.18,96.02c45.38-.46,78.53-.69,99.45-.69h1.37v.69l-80.93,58.98v.69l30.86,94.65h-1.37c-53.04-38.86-79.56-58.52-79.56-58.98-3.89,2.52-30.86,22.18-80.93,58.98h-1.37l31.55-95.33C32,119.11,4.8,99.68,0,96.71v-1.37h1.37c20.92,0,54.07.23,99.45.69C120.94,32.81,131,.8,131,0Z" fill="currentColor"/>
@@ -66,13 +76,12 @@
         </span>
       </div>
     </div> 
-  <main id="main-page-content" class="opacity-0 transition-opacity duration-1000 ease-in-out container mx-auto mt-10 mb-10">
-    <section id="product-hero" class="bg-transparent p-6 rounded-lg mb-8">
+  <main id="main-page-content" class="opacity-0 transition-opacity duration-1000 ease-in-out container mx-auto mt-10 mb-10 px-0 sm:px-2 md:px-4">
+    <section id="product-hero" class="bg-transparent py-3 px-0 sm:p-4 md:p-6 rounded-lg mb-8">
         <div class="flex flex-col md:flex-row gap-8 items-start"> 
-            <div class="w-full md:w-7/12 lg:w-3/5 flex flex-col gap-4">
-                <!-- Image Principale -->
-                <div class="w-full h-auto aspect-ratio md:h-[550px] lg:h-[700px] rounded-lg overflow-hidden relative"> <!-- Conteneur avec hauteur fixe/adaptative, et fond optionnel -->
-                    <img id="main-product-image" src="./images/toilet.png" alt="T-shirt Toilet Girl - Vue principale" loading="lazy" class="w-full h-full object-contain">
+            <div class="w-full md:w-3/5 lg:w-2/3 flex flex-col gap-4">
+                <div class="w-full h-[65vh] sm:h-[80vh] md:h-[750px] lg:h-[900px] rounded-lg overflow-hidden relative">
+                    <img id="main-product-image" src="./images/Toiletgirltee.png" alt="T-shirt Toilet Girl - Vue principale" class="w-full h-full object-contain">
                     <div id="eventail-sticker-container" 
                     class="animate-wobble-sticker absolute bottom-1 left-1 sm:bottom-2 sm:left-2 md:bottom-3 md:left-3 lg:bottom-5 lg:left-5 z-20
                     w-24 h-auto sm:w-28 md:w-32 lg:w-40 xl:w-48
@@ -97,11 +106,10 @@
         </div>
         <div class="w-full md:w-5/12 lg:w-2/5 relative pr-10 sm:pr-12 md:pr-14 lg:pr-16 xl:pr-20 
                 md:pt-12 lg:pt-16">
-            <div class="max-w-md">
             <h1 class="text-brand-accent font-subheading text-3xl font-bold mb-3">Toilet Girl</h1>
         
             <div class="text-gray-300 space-y-4 mb-6">
-                <p class="text-lg"> Tee made 4 u...</p>
+                <p class="text-lg italic"> Tee made 4 u...</p>
                 <div class="space-y-2 text-sm">
                     <p><strong class="font-semibold text-white">Matière :</strong> Coton 100% biologique, respirant et léger.</p>
                     <p><strong class="font-semibold text-white">Impression :</strong> Encres écologiques, sans solvants.</p>
@@ -116,13 +124,13 @@
                     </ul>
                 </div>
                 </div>
-            </div>
             <div class="absolute -top-2 -right-2 md:-top-3 md:-right-3 lg:-top-4 lg:-right-4 z-10 
                             w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-48 xl:h-48
                             transform rotate-12 hover:scale-110 transition-transform duration-200">
                 
                         <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 991.64 672.65" class="drop-shadow-lg"><polygon points="524.75 0 575.42 92.19 676.55 29.64 683.97 126.09 810.66 89.3 774.11 180.58 913.95 173.14 837 250.31 976.31 272.95 866.5 328.45 991.64 378.97 859.71 407.37 958.43 480.81 817.3 479.34 879.94 568.51 743.43 537.3 763.85 633.48 645.31 575.59 621.53 669.36 532.56 590.46 466.89 672.65 416.22 580.46 315.09 643.01 307.67 546.55 180.98 583.35 217.53 492.07 77.69 499.51 154.64 422.34 15.33 399.69 125.14 344.19 0 293.68 131.93 265.27 33.21 191.83 174.34 193.31 111.7 104.14 248.21 135.34 227.79 39.17 346.33 97.05 370.11 3.28 459.08 82.18 524.75 0" fill="#ffd800"/><text transform="translate(208.07 439.06) rotate(4.92)" fill="#b40000" font-family="Montserrat-SemiBold, Montserrat" font-size="350.28" font-weight="600"><tspan x="0" y="0">20</tspan></text><text transform="translate(643.63 419.04) rotate(4.92) scale(.58)" fill="#b40000" font-family="Montserrat-Bold, Montserrat" font-size="350.28" font-weight="700" letter-spacing=".21em"><tspan x="0" y="0">€</tspan></text></svg>
             </div>
+            <div id="shopify-buy-button-container" class="shopify-button-hidden-initially">
             <div id='product-component-1748614517955'></div>
 <script type="text/javascript">
 /*<![CDATA[*/

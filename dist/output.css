@@ -768,6 +768,10 @@ video {
   height: 10rem;
 }
 
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -1025,6 +1029,11 @@ video {
   padding-bottom: 1rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -1035,6 +1044,14 @@ video {
 
 .pt-0 {
   padding-top: 0px;
+}
+
+.pr-4 {
+  padding-right: 1rem;
+}
+
+.pr-0 {
+  padding-right: 0px;
 }
 
 .text-center {
@@ -1067,6 +1084,11 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .font-bold {
@@ -1253,8 +1275,17 @@ video {
     padding-right: 3rem;
   }
 
+  .sm\:pr-4 {
+    padding-right: 1rem;
+  }
+
   .sm\:text-left {
     text-align: left;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
@@ -1364,6 +1395,10 @@ video {
     padding-top: 3rem;
   }
 
+  .md\:pr-10 {
+    padding-right: 2.5rem;
+  }
+
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -1432,10 +1467,18 @@ video {
   .lg\:pt-16 {
     padding-top: 4rem;
   }
+
+  .lg\:pr-12 {
+    padding-right: 3rem;
+  }
 }
 
 @media (min-width: 1280px) {
   .xl\:pr-20 {
     padding-right: 5rem;
+  }
+
+  .xl\:pr-16 {
+    padding-right: 4rem;
   }
 }

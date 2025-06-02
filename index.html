@@ -18,19 +18,31 @@
   height: 100%; 
   overflow-x: hidden; 
 }
+
 body {
   margin: 0;
   padding: 0;
   width: 100%;
-  min-height: 100%;
-  background: linear-gradient(to bottom, #201a23, #000);
-  background-attachment: fixed; 
-  background-size: cover;
-  -webkit-overflow-scrolling: touch;
+  min-height: 100%; /* ou 100vh */
+  position: relative; /* Important si on utilise un pseudo-élément pour le fond */
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  /* On enlève le background du body directement ici, il sera géré par le pseudo-élément ou un div dédié */
 }
-*, *::before, *::after {
-  box-sizing: border-box;
+
+/* === Option 1: Pseudo-élément pour le fond === */
+body::before {
+  content: "";
+  position: fixed; /* Crucial pour couvrir tout le viewport, y compris les zones de l'encoche */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; /* Pour qu'il soit derrière tout le contenu */
+  background: linear-gradient(to bottom, #201a23, #000);
+  background-repeat: no-repeat; /* Peut être enlevé si background-size: cover */
+  background-attachment: fixed; /* Gardons-le pour l'instant, mais c'est un suspect potentiel sur iOS */
+  background-size: cover;
 }
       #price-sticker-on-tshirt svg {
         animation: wobble-sticker 4s ease-in-out infinite;

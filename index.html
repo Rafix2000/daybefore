@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>DayBefore(b4) - Shop</title>
     <meta name="description" content="Découvrez le t-shirt unique Toilet Girl en précommande. Design exclusif, quantité limitée. Réservez le vôtre maintenant">
-    <link rel="icon" href="./images/logo1star.png" type="image/png">
+    <link rel="icon" href="./images/logo1star.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Ballet:opsz@16..72&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="./dist/output.css" rel="stylesheet">
     <style>
-    html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-#price-sticker-on-tshirt svg {
-    animation: wobble-sticker 4s ease-in-out infinite;
-    animation-delay: 1s;
-}
-.shopify-button-hidden-initially {
-    visibility: hidden; /* Ou display: none; mais visibility est parfois mieux pour les scripts qui calculent la taille */
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Optionnel, pour un fondu enchaîné */
-}
-
-.shopify-button-visible {
-    visibility: visible;
-    opacity: 1;
-}
+      html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100%;
+        background: linear-gradient(to bottom, #201a23, #000);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+      }
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+  
+      #price-sticker-on-tshirt svg {
+        animation: wobble-sticker 4s ease-in-out infinite;
+        animation-delay: 1s;
+      }
+  
+      .shopify-button-hidden-initially {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      }
+  
+      .shopify-button-visible {
+        visibility: visible;
+        opacity: 1;
+      }
     </style>
-</head>
+  </head>
 <body class="w-full min-h-screen overflow-x-hidden bg-gradient-to-b from-brand-alternativedark to-black">
     <div id="loader" class="fixed inset-0 w-full h-full bg-gradient-to-b from-brand-alternativedark to-black flex flex-col justify-center items-center z-50 transition-opacity duration-1000 ease-in-out overflow-hidden">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1670.03 250.33" class="w-auto h-12 md:h-16 text-brand-accent">

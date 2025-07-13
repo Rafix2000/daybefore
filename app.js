@@ -23,8 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (logoLinkHeader) {
         logoLinkHeader.addEventListener('click', (event) => {
-            event.preventDefault();
-            window.location.reload();
         });
     }
 
@@ -75,4 +73,29 @@ document.addEventListener('DOMContentLoaded', () => {
         if (loader) loader.style.display = 'none'; // S'assurer que le loader est caché s'il existe mais que les étoiles manquent
         showMainContent(); // Affiche tout immédiatement
     }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  // Fonction pour gérer les transitions de page
+  function handleLinkClick(event) {
+    event.preventDefault(); // Empêche le comportement par défaut du lien
+    const link = event.currentTarget;
+    const href = link.href;
+
+    // Ajoute la classe de fondu sortant au body
+    document.body.classList.add("page-transition-out");
+
+    // Attends que la transition soit terminée (0.2s) avant de changer de page
+    setTimeout(() => {
+      window.location.href = href; // Redirige vers la nouvelle page
+    }, 200); //Correspond à la durée de la transition en css
+  }
+
+  // Ajoute un écouteur d'événements à tous les liens de la page
+  const links = document.querySelectorAll("a"); // Sélectionne tous les liens
+  links.forEach((link) => {
+    // Exclure les liens qui commencent par "#" (ancre) ou qui ont l'attribut "data-no-transition"
+    if (!link.href.startsWith("#") && !link.dataset.noTransition) {
+      link.addEventListener("click", handleLinkClick);
+    }
+  });
 });

@@ -11,9 +11,10 @@ module.exports = {
       colors: {
         'brand-primary': '#B40000',
         'brand-secondary': '#F50000',
-        'brand-accent': '#8F0000', // C'est ce qui devrait colorer ton SVG loader si tu utilises currentColor
-        'brand-alternativepurple': '#631d76',
-        'brand-alternativedark': '#201a23',
+        'brand-accent': '#8F0000',
+        'brand-gray': '#E2DADB',
+        'brand-alternativepurple': '#3D2645',
+        'brand-alternativedark': '#000000',
         'brand-yellow': '#FFD800',
       },
       animation: {

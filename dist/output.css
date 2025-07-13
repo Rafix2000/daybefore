@@ -954,6 +954,10 @@ video {
   border-radius: 0.5rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-l {
   border-left-width: 1px;
 }

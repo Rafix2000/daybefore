@@ -11,6 +11,20 @@
     <link href="./dist/output.css" rel="stylesheet">
     <style>
         .product-link {
+        display: block; /* Pour que le lien prenne toute la largeur du conteneur */
+        transition: transform 0.3s ease; /* Animation au survol */
+    }
+
+    .product-link:hover {
+        transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    }
+   .product-link img {
+       width: 100%;
+       height: auto;
+       object-fit: contain; /* ou cover, selon ton choix */
+       max-height: 500px; /* Ajuste cette valeur pour une hauteur maximale */
+   }
+        .product-link {
             display: block; /* Pour que le lien prenne toute la largeur du conteneur */
             transition: transform 0.3s ease; /* Animation au survol */
         }
@@ -59,13 +73,13 @@
     </div> 
     <main id="main-page-content" class="opacity-0 transition-opacity duration-1000 ease-in-out container mx-auto mt-16 sm:mt-6 md:mt-10 mb-10 px-0 sm:px-2 md:px-4">
       <section id="product-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <a href="tshirt.html" class="product-link">
-              <img src="./images/Toiletgirltee.png" alt="T-shirt Toilet Girl" class="rounded-lg w-full h-[65vh] sm:h-[80vh] md:h-[550px] lg:h-[700px] rounded-lg overflow-hidden relative">
-          </a>
-          <a href="eventail.html" class="product-link w-full h-[65vh] sm:h-[80vh] md:h-[550px] lg:h-[700px] rounded-lg overflow-hidden relative">
-              <img src="./images/eventail.png" alt="Éventail" class="rounded-lg">
-          </a>
-      </section>
+        <a href="tshirt.html" class="product-link">
+            <img src="./images/Toiletgirltee.png" alt="T-shirt Toilet Girl" class="rounded-lg w-full h-full object-contain">
+        </a>
+        <a href="eventail.html" class="product-link">
+            <img src="./images/eventail.png" alt="Éventail" class="rounded-lg w-full h-full object-contain">
+        </a>
+    </section>
   </main>
 <footer id="main-footer" class="opacity-30 transition-opacity duration-1000 ease-in-out bg-brand-yellow text-black p-4 mt-10 text-center">
   <div class="container mx-auto text-center">

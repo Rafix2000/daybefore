@@ -11,6 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Ballet:opsz@16..72&family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="./dist/output.css" rel="stylesheet">
     <style>
+      #main-product-image {
+          object-fit: contain; /* ou cover, selon ton choix */
+          width: 100%;
+          height: auto;
+      }
+      #price-sticker-on-tshirt {
+          background-color: transparent; /* IMPORTANT */
+          border: none; /* Important */
+      }
       #price-sticker-on-tshirt svg {
         animation: wobble-sticker 4s ease-in-out infinite;
         animation-delay: 1s;

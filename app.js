@@ -93,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Ajoute un écouteur d'événements à tous les liens de la page
   const links = document.querySelectorAll("a"); // Sélectionne tous les liens
   links.forEach((link) => {
-    // Exclure les liens qui commencent par "#" (ancre) ou qui ont l'attribut "data-no-transition"
     if (!link.href.startsWith("#") && !link.dataset.noTransition) {
       link.addEventListener("click", handleLinkClick);
     }
